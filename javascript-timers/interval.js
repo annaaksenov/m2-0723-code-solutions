@@ -2,17 +2,11 @@ const header = document.querySelector('.countdown-display');
 let interval = 4;
 
 const id = setInterval(() => {
-  if (interval === 4) {
+  if (interval !== 1) {
     interval--;
-    header.textContent = 3;
-  } else if (interval === 3) {
-    interval--;
-    header.textContent = 2;
-  } else if (interval === 2) {
-    interval--;
-    header.textContent = 1;
-  } else if (interval === 1) {
-    header.textContent = '~Earth Beeelooww Us~';
+    header.textContent--;
+  } else {
+    header.textContent = '~Earth Below Us~';
     clearInterval(id);
   }
 }, 1000);

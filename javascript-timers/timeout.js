@@ -1,5 +1,5 @@
 setTimeout(() => {
-  const newHeader = (document.querySelector('.message').innerHTML =
-    'Hello There');
+  const newHeader = document.querySelector('.message');
+  newHeader.textContent = 'Hello There';
   return newHeader;
 }, 2000);
