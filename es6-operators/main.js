@@ -13,8 +13,8 @@ const checkv2 = v2 === false ? console.log('v2 is truthy') : true;
  * Expected: v1 message logs, v2 message does not.
  */
 
-const config1 = v1 !== true ? v1 : 'default value';
-const config2 = v2 === false ? v2 : 'default value';
+const config1 = v1 || 'default-value';
+const config2 = v2 || 'default-value';
 console.log('config1 =', config1, 'config2 =', config2);
 /* TODO:
  * Demonstrate how to assign a "default value" to a variable.
@@ -24,9 +24,9 @@ console.log('config1 =', config1, 'config2 =', config2);
  * Expected: `config1 = { value: 'Something' }`, `config2 = 'default-value'`.
  */
 
-const cfg1 = v1 || 'default value';
-const cfg2 = v2 || 'default value';
-const cfg3 = v2 || 'default value';
+const cfg1 = v1 ?? 'default value';
+const cfg2 = v2 ?? 'default value';
+const cfg3 = 'default value' ?? v2;
 console.log('config1 =', cfg1, 'cfg2 =', cfg2, 'cfg3 =', cfg3);
 /* TODO:
  * Demonstrate how to assign a "default value" to a variable only if the variable is `undefined`.
