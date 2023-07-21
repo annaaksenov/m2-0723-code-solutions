@@ -4,8 +4,9 @@ const v2 = '';
 const v3 = undefined;
 const v4 = [3, 5, 7, 9];
 
-const checkv1 = v1 !== false ? console.log('v1 is truthy') : false;
-const checkv2 = v2 === false ? console.log('v2 is truthy') : true;
+const check1 = v1 && true ? console.log('v1 is truthy') : false;
+const check2 = v2 && true ? console.log('v1 is truthy') : false;
+
 /* TODO:
  * Demonstrate how to execute an expression only if a variable is truthy.
  * In one expression, log "v1 is truthy" to the console only if `v1` is truthy.
