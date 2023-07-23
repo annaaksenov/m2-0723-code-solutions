@@ -1,0 +1,36 @@
+body {
+  margin: auto;
+}
+
+.container {
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.content {
+  border-style: solid;
+  display: flex;
+  justify-content: space-between;
+}
+
+.column-thirds {
+  flex-basis: 25%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* max-width: 25%; ? */
+}
+
+.column-progress-dots {
+  display: flex;
+  height: 40px;
+  justify-content: center;
+  letter-spacing: 10px;
+}
+
+.fa-solid,
+.fa-regular {
+  cursor: pointer;
+}
