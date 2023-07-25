@@ -4,8 +4,7 @@ body {
 
 .container {
   max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 100px auto;
 }
 
 .content {
@@ -33,4 +32,12 @@ body {
 .fa-solid,
 .fa-regular {
   cursor: pointer;
+}
+
+img {
+  min-width: 100%;
+}
+
+.hidden {
+  display: none;
 }
