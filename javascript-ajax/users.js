@@ -10,7 +10,7 @@ function getUserName(name) {
     for (let i = 0; i < json.length; i++) {
       const li = document.createElement('li');
       li.textContent = name;
-      li.append = user;
+      user.append = li;
     }
   });
   xhr.send();
