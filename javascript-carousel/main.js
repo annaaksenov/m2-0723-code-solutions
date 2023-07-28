@@ -6,11 +6,3 @@
  * const currentIndex = eachImg[currentIndex]... iterates thru imgs.
  * Needs to incremment or decrement depending on which arrow or what dot is clicked.
  */
-const leftArrow = document.querySelector('.fa-chevron-left');
-/* function handleLeft(event) {
-  if (!event.target.matches('.fa-chevron-left')) {
-    return;
-  }
-
-} */
-leftArrow.addEventListener('click');
