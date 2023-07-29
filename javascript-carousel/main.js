@@ -1,8 +1,21 @@
-/** ROUGH SKETCH:
- * const currentIndex = 0;
- * const eachImg = document.querySelectorAll('img);
- * eventHandlerFunction that listens for a click from either the prog bar or arrows.
- * In the Func
- * const currentIndex = eachImg[currentIndex]... iterates thru imgs.
- * Needs to incremment or decrement depending on which arrow or what dot is clicked.
- */
+let i = 0;
+const images = [
+  'images/001.png',
+  'images/025.png',
+  'images/039.png',
+  'images/004.png',
+  'images/007.png',
+];
+
+const intervalID = setInterval(myCallback, 3000, images);
+
+function myCallback(images) {
+  document.querySelector('img').setAttribute('src', images[i]);
+  if (i < images.length - 1) {
+    i++;
+  } else {
+    i = 0;
+  }
+}
+
+console.log(intervalID);
