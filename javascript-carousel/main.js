@@ -8,9 +8,8 @@
  */
 const images = document.querySelectorAll('img');
 let i = 1;
-
 // Auto carousel
-const interID = setInterval(function carousel() {
+const id = setInterval(function carousel() {
   images.forEach((img) => {
     img.className = 'hidden';
   });
@@ -24,7 +23,7 @@ const interID = setInterval(function carousel() {
 // Next img
 const nextBtn = document.querySelector('.fa-chevron-right');
 function handleNext(event) {
-  clearInterval(interID);
+  clearInterval(id);
   images.forEach((img) => {
     img.className = 'hidden';
   });
@@ -33,7 +32,8 @@ function handleNext(event) {
   }
   images[i].className = '';
   i++;
-  setInterval(); // tried restarting interval again after incrementing.
+  // setInterval(carousel()) states carousel is undefined.
+  setInterval(id); // does not trigger it to start.
 }
 nextBtn.addEventListener('click', handleNext);
 
