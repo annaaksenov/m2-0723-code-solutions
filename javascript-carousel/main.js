@@ -1,68 +1,54 @@
-/* const images = [
-    'images/001.png',
-    'images/025.png',
-    'images/039.png',
-    'images/004.png',
-    'images/007.png',
- ];
- */
 const images = document.querySelectorAll('img');
-let i = 1;
+let count = 0;
+const dots = document.querySelectorAll('.dot');
 // Auto carousel
-const id = setInterval(function carousel() {
-  images.forEach((img) => {
-    img.className = 'hidden';
-  });
-  if (i === images.length) {
-    i = 0;
+setInterval(function () {
+  images[count].className = 'hidden';
+  dots[count].classList.replace('fa-solid', 'fa-regular');
+  count++;
+  if (count === 5) {
+    count = 0;
   }
-  images[i].className = '';
-  i++;
+  images[count].className = '';
+  dots[count].classList.replace('fa-regular', 'fa-solid');
 }, 3000);
 
 // Next img
 const nextBtn = document.querySelector('.fa-chevron-right');
 function handleNext(event) {
-  clearInterval(id);
-  images.forEach((img) => {
-    img.className = 'hidden';
-  });
-  if (i === images.length) {
-    i = 0;
+  images[count].className = 'hidden';
+  count++;
+  if (count === 5) {
+    count = 0;
   }
-  images[i].className = '';
-  i++;
-  // setInterval(carousel()) states carousel is undefined.
-  setInterval(id); // does not trigger it to start.
+  images[count].className = '';
 }
 nextBtn.addEventListener('click', handleNext);
 
 // Previous img
 const prevBtn = document.querySelector('.fa-chevron-left');
 function handlePrev(event) {
-  images.forEach((img) => {
-    // Jumps around between imgs but unsure why.
-    img.className = 'hidden';
-  });
-  if (i === 0) {
-    i = images.length - 1;
+  images[count].className = 'hidden';
+  if (count === 0) {
+    count = 5;
   }
-  images[i].className = '';
-  i--;
-  console.log('prev');
+  count--;
+  images[count].className = '';
 }
 prevBtn.addEventListener('click', handlePrev);
 
 // Dot progress bar
-const dots = document.querySelectorAll('.dot');
 function handleDots(event) {
-  dots.forEach((dot) => {
-    dot.className = 'fa-regular';
-  });
-  if (i === dots.length) {
-    i = 0;
+  // Having issue making dots functional
+  if (!event.target.matches('.dot')) {
+    return;
   }
-  dots[i].className = 'fa-solid';
-  console.log('clicked');
+  for (let i = 0; i < dots.length; i++) {
+    if (dots[i] === event.target) {
+      count += dots[i];
+      images[count].className = '';
+      dots[count].classList.replace('fa-regular', 'fa-solid');
+    }
+  }
 }
 dots.addEventListener('click', handleDots);
