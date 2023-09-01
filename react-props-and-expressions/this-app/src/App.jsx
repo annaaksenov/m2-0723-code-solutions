@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg';
 import viteLogo from '/vite.svg';
 import './App.css';
 import CustomButton from './CustomButton';
+import './CustomButton.css';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -27,9 +28,9 @@ function App() {
         </p>
       </div>
       <div>
-        <CustomButton text="I" style="blue" />
-        <CustomButton text="know" style="red" />
-        <CustomButton text="React!" style="green" />
+        <CustomButton text="I" className="color-red" />
+        <CustomButton text="know" className="color-blue" />
+        <CustomButton text="React!" className="color-green" />
       </div>
     </>
   );
