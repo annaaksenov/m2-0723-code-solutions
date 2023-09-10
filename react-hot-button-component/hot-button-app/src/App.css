@@ -58,3 +58,18 @@
   background-color: rgb(245, 98, 122);
   color: white;
 }
+
+.orange {
+  background-color: orange;
+  color: black;
+}
+
+.yellow {
+  background-color: yellow;
+  color: black;
+}
+
+.white {
+  background-color: white;
+  color: black;
+}
