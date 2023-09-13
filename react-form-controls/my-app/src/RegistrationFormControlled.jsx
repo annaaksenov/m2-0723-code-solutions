@@ -1,43 +1,33 @@
 import { useState } from 'react';
 export default function RegistrationFormControlled() {
-  const [isUsername, setUsername] = useState('');
-  const [isPassword, setPassword] = useState('');
+  const [username, setUsername] = useState('');
+  const [password, setPassword] = useState('');
 
   function handleSubmit(event) {
     event.preventDefault();
-    console.log(isUsername, isPassword);
-  }
-  function handleChange(event) {
-    let isUsername = event.target.isUsername;
-    let isPassword = event.target.isPassword;
-    if (isUsername) {
-      setUsername(isUsername);
-    }
-    if (isPassword) {
-      setPassword(isPassword);
-    }
+    console.log('Controlled state:', { username, password });
   }
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <label>
         Username:
         <input
           type="text"
-          id="usrnm"
-          name="username"
-          onChange={handleChange}></input>
+          name="usrnm"
+          placeholder="Username"
+          value={username}
+          onChange={(event) => setUsername(event.target.value)}></input>
       </label>
       <label>
         Password:
         <input
-          type="text"
-          id="psswrd"
-          name="password"
-          onChange={handleChange}></input>
+          type="password"
+          name="passwrd"
+          placeholder="Password"
+          value={password}
+          onChange={(event) => setPassword(event.target.value)}></input>
       </label>
-      <button type="submit" onClick={handleSubmit}>
-        Submit
-      </button>
+      <button>Submit</button>
     </form>
   );
 }
