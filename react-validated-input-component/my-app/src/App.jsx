@@ -1,8 +1,12 @@
-/*{import { useState } from 'react'}*/
 import './App.css';
-
+import ValidatedInput from './ValidatedInput';
+import './ValidatedInput.css';
 function App() {
-  return <></>;
+  return (
+    <>
+      <ValidatedInput />
+    </>
+  );
 }
 
 export default App;
