@@ -1,3 +1,3 @@
-export default function Banner() {
-  return <h3>Animal</h3>;
+export default function Banner({ items, currentIndex }) {
+  return <h3>{items[currentIndex]}</h3>;
 }

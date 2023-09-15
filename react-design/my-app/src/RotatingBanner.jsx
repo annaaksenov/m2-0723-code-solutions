@@ -1,19 +1,16 @@
 import Banner from './Banner';
 import NextBtn from './NextBtn';
 import PrevBtn from './PrevBtn';
-import Carousel from './Carousel';
+import Indicators from './Indicators';
 
-export default function RotatingBanner() {
+export default function RotatingBanner({ items }) {
+  // const [count, setCount] = useState(0);
   return (
-    <>
-      <Banner />
-      <div>
-        <PrevBtn />
-      </div>
-      <Carousel />
-      <div>
-        <NextBtn />
-      </div>
-    </>
+    <div>
+      <Banner item={items[0]} />
+      <PrevBtn />
+      <Indicators count={items.length} />
+      <NextBtn />
+    </div>
   );
 }
