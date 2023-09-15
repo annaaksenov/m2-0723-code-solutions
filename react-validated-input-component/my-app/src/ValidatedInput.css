@@ -1,0 +1,23 @@
+div {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+  width: 250px;
+  height: auto;
+}
+
+input {
+  max-width: 200px;
+}
+
+p {
+  line-height: 0;
+  color: #ff2424;
+}
+
+span {
+  width: 20px;
+  position: relative;
+  top: -26px;
+  left: 210px;
+}
