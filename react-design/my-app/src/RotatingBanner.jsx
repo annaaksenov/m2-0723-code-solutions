@@ -5,13 +5,24 @@ import PrevBtn from './PrevBtn';
 import Indicators from './Indicators';
 
 export default function RotatingBanner({ items }) {
-  const [currentIndex /*setCurrentIndex*/] = useState(0);
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  function handleSelect(index) {
+    setCurrentIndex(index);
+  }
+
   return (
     <div>
-      <Banner item={items[currentIndex]} />
-      <PrevBtn />
-      <Indicators count={items.length} current={currentIndex} />
-      <NextBtn />
+      <Banner items={items[currentIndex]} />
+      <div>
+        <PrevBtn items={items} current={currentIndex} set={setCurrentIndex} />
+        <Indicators
+          onSelect={handleSelect}
+          items={items}
+          current={currentIndex}
+        />
+        <NextBtn items={items} current={currentIndex} set={setCurrentIndex} />
+      </div>
     </div>
   );
 }
