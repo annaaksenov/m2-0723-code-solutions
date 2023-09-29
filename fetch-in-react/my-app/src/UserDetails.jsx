@@ -11,9 +11,7 @@ export default function UserDetails({ userId, onCancel }) {
   useEffect(() => {
     const response = new Request(`https://jsonplaceholder.typicode.com/users/${userId}`);
     fetch(response)
-      .then((response) => {
-        return response.json();
-      })
+      .then((response) => response.json())
       .then((data) => {
         setUser(data),
         setIsLoading(false);
@@ -22,7 +20,7 @@ export default function UserDetails({ userId, onCancel }) {
         setError(error),
         setIsLoading(false);
       })
-  });
+  }, [userId]);
 
 
   if (isLoading) {
